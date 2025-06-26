@@ -14,14 +14,20 @@ square.fills = [{ type: 'SOLID', color: { r: 0, g: 0.5, b: 1 }, opacity: 1 }];
 // Add the square to the current page
 figma.currentPage.appendChild(square);
 
+// Add a black, 2-pixel stroke
+square.strokes = [{ type: 'SOLID', color: { r: 0, g: 0, b: 0 }, opacity: 1 }];
+square.strokeWeight = 2;
+
 // Log the square's properties for verification
 console.log('Square created with properties:', {
-  width: square.width,
-  height: square.height,
-  x: square.x,
-  y: square.y,
-  fill: square.fills[0]
-});
+    width: square.width,
+    height: square.height,
+    x: square.x,
+    y: square.y,
+    fill: square.fills[0],
+    stroke: square.strokes[0],
+    strokeWeight: square.strokeWeight
+  });
 
 // Close the plugin
 figma.closePlugin();
