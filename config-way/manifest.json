@@ -1,0 +1,7 @@
+{
+  "name": "Dynamic Shape Creator - Config Way",
+  "id": "123456789",
+  "main": "code.js",
+  "api": "1.0.0",
+  "editorType": ["figma"]
+}

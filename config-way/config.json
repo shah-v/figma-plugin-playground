@@ -1,0 +1,20 @@
+[
+    {
+      "type": "ellipse",
+      "size": 50,
+      "x": 100,
+      "y": 100,
+      "fill": null,
+      "stroke": { "type": "SOLID", "color": { "r": 1, "g": 0, "b": 0 }, "opacity": 1 },
+      "strokeWeight": 2
+    },
+    {
+      "type": "rectangle",
+      "size": 200,
+      "x": 400,
+      "y": 400,
+      "fill": null,
+      "stroke": { "type": "SOLID", "color": { "r": 0, "g": 0, "b": 0 }, "opacity": 1 },
+      "strokeWeight": 2
+    }
+  ]
