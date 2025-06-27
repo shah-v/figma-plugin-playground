@@ -1,0 +1,8 @@
+{
+    "name": "Dynamic Shape Creator",
+    "id": "123456789",
+    "main": "code.js",
+    "ui": "ui.html",
+    "api": "1.0.0",
+    "editorType": ["figma"]
+  }

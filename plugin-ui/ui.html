@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: sans-serif; padding: 10px; }
+    .form-group { margin-bottom: 10px; }
+    label { display: inline-block; width: 100px; }
+    input, select { margin-left: 10px; }
+    button { margin-top: 10px; padding: 5px 10px; }
+  </style>
+</head>
+<body>
+  <div class="form-group">
+    <label>Shape Type:</label>
+    <select id="shapeType">
+      <option value="rectangle">Rectangle</option>
+      <option value="ellipse">Ellipse</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Size (px):</label>
+    <input type="number" id="size" value="100" min="10">
+  </div>
+  <div class="form-group">
+    <label>X Position:</label>
+    <input type="number" id="x" value="200">
+  </div>
+  <div class="form-group">
+    <label>Y Position:</label>
+    <input type="number" id="y" value="300">
+  </div>
+  <div class="form-group">
+    <label>Fill Color:</label>
+    <input type="checkbox" id="useFill" checked>
+    <input type="color" id="fillColor" value="#0000FF">
+  </div>
+  <button onclick="createShape()">Create Shape</button>
+  <script>
+    function createShape() {
+      const shapeType = document.getElementById('shapeType').value;
+      const size = parseFloat(document.getElementById('size').value);
+      const x = parseFloat(document.getElementById('x').value);
+      const y = parseFloat(document.getElementById('y').value);
+      const useFill = document.getElementById('useFill').checked;
+      const fillColor = document.getElementById('fillColor').value;
+      parent.postMessage({
+        pluginMessage: { shapeType, size, x, y, useFill, fillColor }
+      }, '*');
+    }
+  </script>
+</body>
+</html>
