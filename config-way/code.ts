@@ -11,7 +11,22 @@ interface ShapeConfig {
 const config: ShapeConfig[] = require('./config.json');
 
 (async () => {
-  for (const cfg of config) {
+  console.log('Config type:', typeof config);
+  console.log('Config content:', config);
+  let parsedConfig: ShapeConfig[];
+  try {
+    parsedConfig = typeof config === 'string' ? JSON.parse(config) : config;
+  } catch (e) {
+    console.error('Failed to parse config:', e);
+    figma.closePlugin('Error: Invalid config.json format');
+    return;
+  }
+  for (const cfg of parsedConfig) {
+    console.log('Shape config:', cfg);
+    if (typeof cfg.size !== 'number' || cfg.size <= 0) {
+      console.error(`Invalid size for ${cfg.type}: ${cfg.size}. Skipping shape.`);
+      continue;
+    }
     const shape = cfg.type === 'rectangle' ? figma.createRectangle() : figma.createEllipse();
     shape.resize(cfg.size, cfg.size);
     shape.x = cfg.x;
