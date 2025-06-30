@@ -34,20 +34,33 @@ const config: NodeConfig[] = require('./config.json');
         console.error(`Invalid text config: ${JSON.stringify(cfg)}. Skipping node.`);
         continue;
       }
+      console.log('Text: Starting font load:', cfg.text.fontName);
       try {
         await figma.loadFontAsync(cfg.text.fontName);
+        console.log('Text: Font loaded successfully');
       } catch (e) {
         console.error(`Failed to load font ${JSON.stringify(cfg.text.fontName)}: ${e}`);
         continue;
       }
+      console.log('Text: Creating text node');
       const text = figma.createText();
+      console.log('Text: Setting characters:', cfg.text.content);
       text.characters = cfg.text.content;
+      console.log('Text: Setting fontName:', cfg.text.fontName);
       text.fontName = cfg.text.fontName;
+      console.log('Text: Setting fontSize:', cfg.text.fontSize);
       text.fontSize = cfg.text.fontSize;
+      console.log('Text: Setting x:', cfg.x);
       text.x = cfg.x;
+      console.log('Text: Setting y:', cfg.y);
       text.y = cfg.y;
+      console.log('Text: Setting fills:', cfg.fill);
       text.fills = cfg.fill ? [cfg.fill] : [];
-      if (cfg.rotation !== undefined) text.rotation = cfg.rotation;
+      if (cfg.rotation !== undefined) {
+        console.log('Text: Setting rotation:', cfg.rotation);
+        text.rotation = cfg.rotation;
+      }
+      console.log('Text: Appending to page');
       figma.currentPage.appendChild(text);
       console.log(`Text node created with properties:`, {
         content: text.characters,
