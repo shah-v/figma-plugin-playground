@@ -1,20 +1,81 @@
 [
-    {
-      "type": "ellipse",
-      "size": 50,
-      "x": 100,
-      "y": 100,
-      "fill": null,
-      "stroke": { "type": "SOLID", "color": { "r": 1, "g": 0, "b": 0 }, "opacity": 1 },
-      "strokeWeight": 2
+  {
+    "type": "ellipse",
+    "size": 50,
+    "x": 100,
+    "y": 100,
+    "fill": null,
+    "stroke": {
+      "type": "SOLID",
+      "color": {
+        "r": 1,
+        "g": 0,
+        "b": 0
+      },
+      "opacity": 1
     },
-    {
-      "type": "rectangle",
-      "size": 200,
-      "x": 400,
-      "y": 400,
-      "fill": null,
-      "stroke": { "type": "SOLID", "color": { "r": 0, "g": 0, "b": 0 }, "opacity": 1 },
-      "strokeWeight": 2
+    "strokeWeight": 2,
+    "rotation": 45
+  },
+  {
+    "type": "text",
+    "x": 100,
+    "y": 70,
+    "fill": {
+      "type": "SOLID",
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "opacity": 1
+    },
+    "text": {
+      "content": "Circle Label",
+      "fontName": {
+        "family": "Inter",
+        "style": "Regular"
+      },
+      "fontSize": 16
     }
-  ]
+  },
+  {
+    "type": "rectangle",
+    "size": 200,
+    "x": 400,
+    "y": 400,
+    "fill": null,
+    "stroke": {
+      "type": "SOLID",
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "opacity": 1
+    },
+    "strokeWeight": 2
+  },
+  {
+    "type": "text",
+    "x": 400,
+    "y": 370,
+    "fill": {
+      "type": "SOLID",
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "opacity": 1
+    },
+    "text": {
+      "content": "Square Label",
+      "fontName": {
+        "family": "Inter",
+        "style": "Regular"
+      },
+      "fontSize": 16
+    }
+  }
+]
